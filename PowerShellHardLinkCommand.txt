@@ -1,0 +1,9 @@
+
+
+
+# For stuff that isn't auto downloaded by Sonarr, hardlink it into the show directory, then use Sonarr to rename it.
+# This is how I handle specials where tvdb has S00EXX, but the download always has some custom name.
+New-Item -ItemType HardLink -Path "<Friendly>" -Target "<Torrent>"
+
+# Verify that hardlinks are working
+fsutil hardlink list <file>
